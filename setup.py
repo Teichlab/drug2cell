@@ -5,7 +5,7 @@ setup(
     version='0.1.0',
     description='Gene group activity utility functions for scanpy',
     url='https://github.com/Teichlab/drug2cell',
-    packages=find_packages(exclude=['docs', 'figures', 'examples']),
+    packages=find_packages(exclude=['docs', 'notebooks']),
     install_requires=[
         'anndata',
         'pandas',
