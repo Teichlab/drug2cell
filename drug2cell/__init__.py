@@ -1,4 +1,3 @@
-import blitzgsea as blitz
 import anndata
 import pandas as pd
 import numpy as np
@@ -261,6 +260,11 @@ def gsea(adata, targets=None, nested=False, categories=None, absolute=False, plo
     sep : ``str``, optional (default: ``","``)
         The delimiter that was used with ``d2c.score()`` for gene group storage.
     '''
+    #load blitzgsea - needs to be here so this can be pipped, as blitzgsea is only on git
+    try:
+        import blitzgsea
+    except ImportError:
+        raise ImportError("please install blitzgsea: pip install git+https://github.com/MaayanLab/blitzgsea.git")
     #get {group:[targets]} form of gene groups to evaluate based on arguments
     #allow for target reconstruction for when this is ran after scoring
     targets = util.prepare_targets(
@@ -286,7 +290,7 @@ def gsea(adata, targets=None, nested=False, categories=None, absolute=False, plo
             df["1"] = np.absolute(df["1"])
             df = df.sort_values("1", ascending=False)
         #compute GSEA and store results/scores in output
-        enrichment[cluster] = blitz.gsea(df, targets)
+        enrichment[cluster] = blitzgsea.gsea(df, targets)
         plot_gsea_args["scores"][cluster] = df
     #provide output
     if plot_args:

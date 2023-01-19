@@ -6,7 +6,15 @@ This is a collection of utility functions for gene group activity evaluation in 
 
 Once public, this will be on `pip`. For now install straight from this repository:
 
-    pip install git+https://github.com/Teichlab/drug2cell.git
+```bash
+pip install git+https://github.com/Teichlab/drug2cell.git
+```
+
+Drug2cell's GSEA makes use of blitzGSEA, which needs to be installed from GitHub:
+
+```bash
+pip install git+https://github.com/MaayanLab/blitzgsea.git
+```
 
 ## Usage
 

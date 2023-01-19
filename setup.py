@@ -7,7 +7,6 @@ setup(
     url='https://github.com/Teichlab/drug2cell',
     packages=find_packages(exclude=['docs', 'figures', 'examples']),
     install_requires=[
-        'blitzgsea @ git+https://github.com/MaayanLab/blitzgsea.git',
         'anndata',
         'pandas',
         'numpy',
@@ -19,5 +18,5 @@ setup(
     },
     author='Krzysztof Polanski, Kazumasa Kanemaru',
     author_email='kp9@sanger.ac.uk',
-    license='other'
+    license='non-commercial license'
 )
