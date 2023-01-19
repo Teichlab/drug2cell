@@ -1,0 +1,23 @@
+from setuptools import setup, find_packages
+
+setup(
+    name='drug2cell',
+    version='0.1.0',
+    description='Gene group activity utility functions for scanpy',
+    url='https://github.com/Teichlab/d2c',
+    packages=find_packages(exclude=['docs', 'figures', 'examples']),
+    install_requires=[
+        'blitzgsea @ git+https://github.com/MaayanLab/blitzgsea.git',
+        'anndata',
+        'pandas',
+        'numpy',
+        'statsmodels',
+        'scipy'
+    ],
+    package_data={
+        "drug2cell": ["*.pkl"]
+    },
+    author='Krzysztof Polanski, Kazumasa Kanemaru',
+    author_email='kp9@sanger.ac.uk',
+    license='other'
+)
