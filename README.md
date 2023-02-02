@@ -28,7 +28,7 @@ import drug2cell as d2c
 
 It's possible to provide your own gene groups as a dictionary, with the names of the groups as keys and the corresponding gene lists as the values. Pass this dictionary as the `targets` argument of any of those three functions.
 
-Please refer to the [demo notebook](notebooks/demo.ipynb). The functions have docstrings in the source code, which will be rendered to ReadTheDocs once released.
+**Please refer to the [demo notebook](notebooks/demo.ipynb), all of the input arguments are detailed in [ReadTheDocs](https://drug2cell.readthedocs.io/en/latest/).**
 
 ## ChEMBL parsing
 
