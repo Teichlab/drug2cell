@@ -15,8 +15,11 @@ Gene group loading
 .. automodule:: drug2cell.data
    :members:  chembl, consensuspathdb
 
-Utility (plot-related) functions
-================================
+Utility functions
+=================
 
 .. automodule:: drug2cell.util
    :members:  prepare_plot_args, plot_gsea
+
+.. automodule:: drug2cell.chembl
+   :members:  filter_activities
