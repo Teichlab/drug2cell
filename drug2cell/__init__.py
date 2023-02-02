@@ -221,9 +221,10 @@ def gsea(adata, targets=None, nested=False, categories=None, absolute=False, plo
     original object. Uses blitzgsea.
     
     Returns:
-     - a dictionary with clusters for which the original object markers were computed 
+    
+    - a dictionary with clusters for which the original object markers were computed 
     as the keys, and data frames of test results sorted on q-value as the items
-     - a helper variable with plotting arguments for ``d2c.plot_gsea()``, if 
+    - a helper variable with plotting arguments for ``d2c.plot_gsea()``, if 
     ``plot_args=True``. ``['scores']`` has the GSEA input, and ``['targets']`` is the 
     gene group dictionary that was used.
     

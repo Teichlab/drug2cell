@@ -8,3 +8,9 @@ Welcome to Drug2cell's documentation!
 
 .. automodule:: drug2cell
    :members:  gsea, hypergeometric, score
+
+Gene group loading
+==================
+
+.. automodule:: drug2cell.data
+   :members:  chembl, consensuspathdb
