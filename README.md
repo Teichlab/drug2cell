@@ -30,7 +30,7 @@ It's possible to provide your own gene groups as a dictionary, with the names of
 
 ## ChEMBL parsing
 
-Drug2cell also features instructions on how to parse the ChEMBL database into drugs and their targets. Some additional notebooks are included. Both refer to a pre-parsed data frame of ChEMBL human targets, which can currently be accessed at `/nfs/team205/kk18/data/ChEMBL/pkls/chembl_30_merged_genesymbols_humans.pkl`. Once public, this will be put up on FTP.
+Drug2cell also features instructions on how to parse the ChEMBL database into drugs and their targets. Some additional notebooks are included. Both refer to a pre-parsed data frame of ChEMBL human targets, which can be accessed at `ftp://ftp.sanger.ac.uk/pub/users/kp9/chembl_30_merged_genesymbols_humans.pkl`.
  - [Filtering](https://nbviewer.org/github/Teichlab/drug2cell/blob/main/notebooks/chembl/filtering.ipynb) shows how this data frame was turned into the drugs:targets dictionary shipped with the package by default. There are some helper functions included in `d2c.chembl` which can assist you shall you wish to filter it in a different way.
  - [Initial database parsing](https://nbviewer.org/github/Teichlab/drug2cell/blob/main/notebooks/chembl/initial_database_parsing.ipynb) shows how the data frame was created from online resources.
  
