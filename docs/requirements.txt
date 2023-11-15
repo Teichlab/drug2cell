@@ -1,2 +1,1 @@
-pip>=19.0
-numpy
+sphinx-rtd-theme
