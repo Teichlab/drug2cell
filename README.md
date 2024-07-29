@@ -8,12 +8,6 @@ This is a collection of utility functions for gene group activity evaluation in 
 pip install drug2cell
 ```
 
-Drug2cell's GSEA makes use of blitzGSEA, which needs to be installed from GitHub:
-
-```bash
-pip install git+https://github.com/MaayanLab/blitzgsea.git
-```
-
 ## Usage
 
 ```python3
@@ -36,19 +30,17 @@ Drug2cell also features instructions on how to parse the ChEMBL database into dr
  
 ## Citation
 
-If you use drug2cell in your work, please cite the [preprint](https://www.biorxiv.org/content/10.1101/2023.01.30.526202v1)
+If you use drug2cell in your work, please cite the [paper](https://www.nature.com/articles/s41586-023-06311-1)
 
 ```
-@article {Kanemaru2023.01.30.526202,
-	author = {Kanemaru, Kazumasa and Cranley, James and Muraro, Daniele and Miranda, Antonio M.A. and Pett, Jan Patrick and Litvinukova, Monika and Kumasaka, Natsuhiko and Ho, Siew Yen and Polanski, Krzysztof and Richardson, Laura and Mach, Lukas and Dabrowska, Monika and Richoz, Nathan and Barnett, Sam N. and Perera, Shani and Wilbrey-Clark, Anna L and Talavera-L{\'o}pez, Carlos and Mulas, Ilaria and Mahbubani, Krishnaa T. and Bolt, Liam and Mamanova, Lira and Tuck, Liz and Wang, Lu and Huang, Margaret M. and Prete, Martin and Pritchard, Sophie and Dark, John and Saeb-Parsy, Kourosh and Patel, Minal and Clatworthy, Menna R. and Chowdhury, Rasheda A. and Noseda, Michela and Teichmann, Sarah A.},
-	title = {Spatially resolved multiomics of human cardiac niches},
-	elocation-id = {2023.01.30.526202},
-	year = {2023},
-	doi = {10.1101/2023.01.30.526202},
-	publisher = {Cold Spring Harbor Laboratory},
-	abstract = {A cell{\textquoteright}s function is defined by its intrinsic characteristics and its niche: the tissue microenvironment in which it dwells. Here, we combine single-cell and spatial transcriptomic data to discover cellular niches within eight regions of the human heart. We map cells to micro-anatomic locations and integrate knowledge-based and unsupervised structural annotations. For the first time, we profile the cells of the human cardiac conduction system, revealing their distinctive repertoire of ion channels, G-protein coupled receptors, and cell interactions using a custom CellPhoneDB.org module. We show that the sinoatrial node is compartmentalised, with a core of pacemaker cells, fibroblasts and glial cells supporting paracrine glutamatergic signalling. We introduce a druggable target prediction tool, drug2cell, which leverages single-cell profiles and drug-target interactions, providing unexpected mechanistic insights into the chronotropic effects of drugs, including GLP-1 analogues. In the epicardium, we show enrichment of both IgG+ and IgA+ plasma cells forming immune niches which may contribute to infection defence. We define a ventricular myocardial-stress niche enriched for activated fibroblasts and stressed cardiomyocytes, cell states that are expanded in cardiomyopathies. Overall, we provide new clarity to cardiac electro-anatomy and immunology, and our suite of computational approaches can be deployed to other tissues and organs.Competing Interest StatementIn the past three years, S.A.T. has consulted or been a member of scientific advisory boards at Roche, Genentech, Biogen, GlaxoSmithKline, Qiagen and ForeSite Labs and is an equity holder of Transition Bio. The remaining authors declare no competing interests.},
-	URL = {https://www.biorxiv.org/content/early/2023/02/01/2023.01.30.526202},
-	eprint = {https://www.biorxiv.org/content/early/2023/02/01/2023.01.30.526202.full.pdf},
-	journal = {bioRxiv}
+@article{kanemaru2023spatially,
+  title={Spatially resolved multiomics of human cardiac niches},
+  author={Kanemaru, Kazumasa and Cranley, James and Muraro, Daniele and Miranda, Antonio MA and Ho, Siew Yen and Wilbrey-Clark, Anna and Patrick Pett, Jan and Polanski, Krzysztof and Richardson, Laura and Litvinukova, Monika and others},
+  journal={Nature},
+  volume={619},
+  number={7971},
+  pages={801--810},
+  year={2023},
+  publisher={Nature Publishing Group UK London}
 }
 ```
