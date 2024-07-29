@@ -18,7 +18,7 @@ autodoc_mock_imports = ['anndata', 'pandas', 'numpy', 'statsmodels.stats.multite
 project = 'Drug2cell'
 copyright = '2023, Krzysztof Polanski, Kazumasa Kanemaru'
 author = 'Krzysztof Polanski, Kazumasa Kanemaru'
-release = '0.1.0'
+release = '0.1.1'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration

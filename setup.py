@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='drug2cell',
-    version='0.1.0',
+    version='0.1.1',
     description='Gene group activity utility functions for scanpy',
     url='https://github.com/Teichlab/drug2cell',
     packages=find_packages(exclude=['docs', 'notebooks']),
