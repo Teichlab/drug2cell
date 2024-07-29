@@ -1,3 +1,4 @@
+import blitzgsea
 import anndata
 import pandas as pd
 import numpy as np
@@ -215,7 +216,7 @@ def score(adata, targets=None, nested=False, categories=None, method="mean", lay
         #pull out the old full membership dict and store that too
         adata.uns['drug2cell'].var.loc[drug, 'all_genes'] = sep.join(full_targets[drug])
 
-def gsea(adata, targets=None, nested=False, categories=None, absolute=False, plot_args=True, sep=","):
+def gsea(adata, targets=None, nested=False, categories=None, absolute=False, plot_args=True, sep=",", **kwargs):
     '''
     Perform gene set enrichment analysis on the marker gene scores computed for the 
     original object. Uses blitzgsea.
@@ -261,12 +262,9 @@ def gsea(adata, targets=None, nested=False, categories=None, absolute=False, plo
         for ``d2c.plot_gsea()``.
     sep : ``str``, optional (default: ``","``)
         The delimiter that was used with ``d2c.score()`` for gene group storage.
+    kwargs
+        Any additional arguments to pass to ``blitzgsea.gsea()``.
     '''
-    #load blitzgsea - needs to be here so this can be pipped, as blitzgsea is only on git
-    try:
-        import blitzgsea
-    except ImportError:
-        raise ImportError("please install blitzgsea: pip install git+https://github.com/MaayanLab/blitzgsea.git")
     #get {group:[targets]} form of gene groups to evaluate based on arguments
     #allow for target reconstruction for when this is ran after scoring
     targets = util.prepare_targets(
@@ -292,7 +290,7 @@ def gsea(adata, targets=None, nested=False, categories=None, absolute=False, plo
             df["1"] = np.absolute(df["1"])
             df = df.sort_values("1", ascending=False)
         #compute GSEA and store results/scores in output
-        enrichment[cluster] = blitzgsea.gsea(df, targets)
+        enrichment[cluster] = blitzgsea.gsea(df, targets, **kwargs)
         plot_gsea_args["scores"][cluster] = df
     #provide output
     if plot_args:
@@ -374,6 +372,8 @@ def hypergeometric(adata, targets=None, nested=False, categories=None, pvals_adj
             index=list(targets.keys()),
             columns=['intersection','gene_group','markers','universe','pvals', 'pvals_adj']
         )
+        #pre-type pvals as floats as otherwise pandas complains about deprecation
+        results = results.astype({"pvals":"float64", "pvals_adj":"float64"})
         #identify the markers for this group from the original output
         #construct mask for significance
         mask = adata.uns['rank_genes_groups']['pvals_adj'][cluster] < pvals_adj_thresh

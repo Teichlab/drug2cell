@@ -11,7 +11,8 @@ setup(
         'pandas',
         'numpy',
         'statsmodels',
-        'scipy'
+        'scipy',
+        'blitzgsea'
     ],
     package_data={
         "drug2cell": ["*.pkl"]

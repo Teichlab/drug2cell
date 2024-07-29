@@ -1,3 +1,4 @@
+import blitzgsea
 import numpy as np
 
 from . import data
@@ -115,7 +116,7 @@ def prepare_plot_args(adata, targets=None, categories=None):
                  'var_group_labels':var_group_labels}
     return plot_args
 
-def plot_gsea(enrichment, targets, scores, n=10):
+def plot_gsea(enrichment, targets, scores, n=10, interactive_plot=True, **kwargs):
     '''
     Display the output of ``d2c.gsea()`` with blitzgsea's ``top_table()`` plot.
     
@@ -133,11 +134,32 @@ def plot_gsea(enrichment, targets, scores, n=10):
         Cluster names as keys, the input to blitzgsea
     n : ``int``, optional (default: ``10``)
         How many top scores to show for each group
+    interactive_plot : ``bool``, optional (default: ``True``)
+        If ``True``, will display the plots within a Jupyter Notebook. If ``False``, 
+        will collect the figures into a list and return it at the end.
+    kwargs
+        Any additional arguments to pass to ``blitzgsea.plot.top_table()``.
     '''
-    import blitzgsea
+    #optionally save output
+    if not interactive_plot:
+        figs = []
     #make a top_table() plot for each cluster
     for cluster in enrichment:
-        fig = blitzgsea.plot.top_table(scores[cluster], targets, enrichment[cluster], n=n)
+        #get a figure, passing the various arguments
+        #interactive_plot prepares the figure so that it .show()s in a notebook
+        fig = blitzgsea.plot.top_table(scores[cluster], 
+                                       targets, 
+                                       enrichment[cluster], 
+                                       n=n, 
+                                       interactive_plot=interactive_plot,
+                                       **kwargs
+                                      )
         #retitle accordingly
         fig.suptitle(cluster)
-        fig.show()
+        #either display the plot or stash it in output
+        if interactive_plot:
+            fig.show()
+        else:
+            figs.append(fig)
+    if not interactive_plot:
+        return figs
