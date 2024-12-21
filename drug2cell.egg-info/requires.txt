@@ -1,0 +1,6 @@
+anndata
+pandas
+numpy
+statsmodels
+scipy
+blitzgsea

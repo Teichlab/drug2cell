@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: drug2cell
+Version: 0.1.1
+Summary: Gene group activity utility functions for scanpy
+Home-page: https://github.com/Teichlab/drug2cell
+Author: Krzysztof Polanski, Kazumasa Kanemaru
+Author-email: kp9@sanger.ac.uk
+License: non-commercial license
+License-File: LICENSE
+Requires-Dist: anndata
+Requires-Dist: pandas
+Requires-Dist: numpy
+Requires-Dist: statsmodels
+Requires-Dist: scipy
+Requires-Dist: blitzgsea

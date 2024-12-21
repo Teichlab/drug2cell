@@ -1,0 +1,14 @@
+LICENSE
+README.md
+setup.py
+drug2cell/__init__.py
+drug2cell/chembl.py
+drug2cell/cpdb_dict.pkl
+drug2cell/data.py
+drug2cell/drug-target_dicts.pkl
+drug2cell/util.py
+drug2cell.egg-info/PKG-INFO
+drug2cell.egg-info/SOURCES.txt
+drug2cell.egg-info/dependency_links.txt
+drug2cell.egg-info/requires.txt
+drug2cell.egg-info/top_level.txt
